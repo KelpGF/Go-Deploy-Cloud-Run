@@ -1,0 +1,10 @@
+services:
+  app:
+    image: golang:1.22
+    container_name: go-cloudrun-app
+    entrypoint: sh ./.docker/entrypoint.sh
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
